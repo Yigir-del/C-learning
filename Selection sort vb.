@@ -1,0 +1,44 @@
+                                                                                  <<<<<<<<<<<<<<<<<<<<<<<<<<<<SELECTION SORT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#include <stdio.h>
+
+// Sıralama fonksiyonu
+void sirala(int *p, int length) {
+    int i, j;
+    for (i = 0; i < length - 1; i++) {
+        for (j = i + 1; j < length; j++) {
+            if (p[i] > p[j]) {
+                int temp = p[j];
+                p[j] = p[i];
+                p[i] = temp;
+            }
+        }
+    }
+}
+
+// Ana fonksiyon
+int main() {
+    int i, uzunluk;
+
+    printf("Sayilar dizisinin uzunlugunu belirleyiniz: ");
+    scanf("%d", &uzunluk);
+
+    int sayilar[uzunluk];
+
+    printf("Sayilari giriniz:\n");
+    for (i = 0; i < uzunluk; i++) {
+        scanf("%d", &sayilar[i]);
+    }
+
+    // Diziyi sırala
+    sirala(sayilar, uzunluk);
+
+    // Sıralanmış diziyi yazdır
+    printf("Siralanmis dizi: ");
+    for (i = 0; i < uzunluk; i++) {
+        printf("%d ", sayilar[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
