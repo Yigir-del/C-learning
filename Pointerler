@@ -1,0 +1,188 @@
+                                                                             <<<<<<<<<<<<<<<<<<<<<<<<<<<POİNTER>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+#include <stdio.h>   
+ 
+ int main(){
+      /*
+      pointer = gösterici
+      format belirleyici olarak  %u  && %p   kullanabiliriz.
+      */
+     int i = 5;
+     int *p = &i;
+     printf("%u\n", p);
+     printf("%d",*p);
+      // & değişkenin adres bilgisini verir.
+      // * değişkenin değerini verir.
+
+   return 0;
+ 
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>   
+ 
+ int main(){
+     
+      int i,j=1;
+      int *jp1,*jp2 = &j;
+
+      jp1 = jp2;
+
+      i = ++(*jp2);
+      
+      *jp2 = *jp1 +i;
+
+      printf("i = %d,j = %d  ,  *jp1 =  %d , *jp2 = %d\n",i,j,*jp1,*jp2);
+
+
+   return 0;
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include <stdio.h>   
+//CALL BY VALUE  
+//parametreye sadece değerin bilgisi ulaşıyor yani a ve b ye x ve y nin sadece değeri atanıyor.
+ 
+      void degerdeistir(int a,int b){
+        int gecici = a;
+        a = b;
+        b = gecici;
+        printf("a:%d , b:%d\n",a,b);
+      }
+ int main(){    
+     int x =5 ,y = 10;
+     degerdeistir(x,y);
+     printf("x:%d , y:%d",x , y);
+   return 0;
+}
+
+
+
+
+
+#include <stdio.h>  
+//CALL BY REFERENCES
+//Fonksiyonun parametrelerine bir değer atamak yerine adres atıyoruz ve x ile y nin adresleri  nin içini deiştiriyoruz a ve b yardımı ile.
+
+   void degerdeistir(int *a,int *b){ 
+     int gecici = *a;
+     *a = *b;
+     *b = gecici; 
+   }
+int main(){       
+      int x = 5,  y = 10;
+      degerdeistir(&x,&y);
+      printf("x:%d , y:%d", x,y);
+   return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include <stdio.h>  
+
+   
+int main(){       
+      
+   int sayilar[5] = {1,2,3,4,5};
+   int *p = sayilar;
+      /*printf("%u\n",p);>>>>>>>> int değerler 4 byte yer kapladığı için 4 fazlası olan adrese yerleşti.
+      printf("%u\n",p+1);
+      printf("%u\n",p+2);
+      printf("%u\n",p+3);
+      */
+
+   //  printf("%d\n",*p);
+   //  printf("%d\n",*(p+1));
+   //  printf("%d\n",*(p+2));
+   //  printf("%d\n",*(p+3));
+   //  printf("%d\n",*(p+4));
+
+      printf("%d\n",p[0]);
+      printf("%d\n",p[1]);
+      printf("%d\n",p[2]);
+      printf("%d\n",p[3]);
+      printf("%d\n",p[4]);
+
+//*(p+1) ---------------> p[1]
+//                         sayilar[1]
+
+
+   return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+
+int max(int *a, int length) {
+    int maks = a[0];
+    for (int i = 1; i < length; i++) {
+        if (a[i] > maks) {
+            maks = a[i];
+        }
+    }
+    return maks;  // Döngü tamamlandığında maksimum değeri döndür
+}
+
+int main() {
+    int sayilar[5] = {3, 4, 42, 100, 1};
+    int maks = max(sayilar, 5);
+    printf("Arrayin en buyugu: %d\n", maks);
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include <stdio.h>
+#include <string.h>
+char *dondur(char *p,int index){
+    int uzunluk = strlen(p);
+    if (index > uzunluk){
+        return NULL;
+    }
+    else{
+        return p + index;
+    }
+}
+int main(){
+    char dizi[]= "yazilim";
+    char *p = dondur(dizi,2);
+    if (p == NULL){
+        printf("Pointer NULL");
+    }
+    else{
+        printf("%s",p);
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+char *gunismi(char *gundizisi[],int lenght,int hangigun){      
+        if(hangigun >= 1 && hangigun <= 7){
+        return gundizisi[hangigun - 1];
+        }
+        else{
+            return NULL;
+        }
+}
+int main(){
+  char *gunler[7] = {"pazartesi","sali","carsamba","persembe","cuma","cumartesi","pazar"};
+  char *p = gunismi(gunler,7,5);
+        if (p == NULL){
+            printf("NULL");
+        }
+        else{
+            printf("%s",p);
+        }                            
+ return 0;
+}
+
+
