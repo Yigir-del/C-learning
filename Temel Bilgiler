@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <conio.h>
+int main(){
+	
+	printf("Merhaba, Dunya\tMerhaba\n");                         
+	printf("Merhaba, Yigit");
+	getch();
+	return 0;
+} 
+printf(); , output dur.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+	
+	// tek satırlık yorum işareti.
+	
+	/*   
+         çok satırlı yorum satırı.	
+	*/
+	
+	/*
+	Format Belirleyiciler
+	    %d şeklinde  int değerler için kullanılır
+	    %f float ve double  değerler için kullanılır
+	    %c char değerler için kullanılır
+	    %s string değerler için kullanlır
+	    
+	    ÖRNEK:
+	    float x = 5.21;
+	    int y = 4;
+	    printf("%d,%f",y,x);--------> ekrana 4,5.210000 yazar.
+	    
+	    char karakterler tanımlanırken.
+	    char c1 = 'a';-------->şeklinde tanımlanır.
+	    printf("%c",c1); ----------------> bu kullanım bize direkt c1 i verir
+	    printf("%d",c1); ----------------> bu kullanım ise c1 in ASCII tablosundaki char  karşılığını verir
+	    
+	    string ifadeleri yazdırıken ise "%s" i kullanırız
+	    printf("%s","MerhabaC");
+	*/
+	
+
+	int a1 = 42;
+	char b1 = 66;
+	char b2 = 'B';
+	float c1 = 4.2;
+	double d1 = 0.21;
+	
+	printf("%d %c %d %.1f %.3f %s\n",a1,b1,b2,c1,d1,"YiğitEfe");
+	
+	printf("%d byte\n",sizeof(int));// byte değerini verir.
+	
+	
+	
+	
+	return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main(){
+	
+	
+	printf("%.1f\n",9.5+12.2);
+	printf("%d\n",9-12);
+	printf("%d\n",9*12);
+	printf("%.2f\n",9.0/12.0);
+	printf("%d\n",9%12);
+
+	
+	return 0;
+}
