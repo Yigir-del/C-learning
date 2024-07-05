@@ -1,0 +1,90 @@
+                         <<<<<<<<<<<<<<<<<<<<<<<<KARAR YAPILARI>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#include <stdio.h>
+
+int main() {
+    
+   int x;
+   scanf("%d",&x);
+   
+   if(x >= 60){
+   	printf("Geçtin");
+   }
+   else{
+   	printf("kaldın");
+   }
+   
+   
+    
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+#include <stdio.h>
+
+int main() {
+    
+   int a,b = 40 , c = 30;
+   
+   a = b < c ? b : c ;
+   printf("%d",a);
+   
+    return 0;
+}
+
+b < c  ise  a değişkenine b yi atar
+deilse a değişkenine c yi atar
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+#include <stdio.h>
+
+int main(){
+	
+	int islem,bakiye = 1000,tutar;
+	printf("Islemler\n1 Bakiye Sorma\n2 Para cekme\n3 Para Yatirma\n4 Havale Yapma\n\n\n");
+	scanf("%d",&islem);
+	
+	
+	switch(islem){
+		
+		case 1:
+		 printf("%d",bakiye); 
+		        break;
+		case 2:
+		printf("Bakiyeniz: %d\n",bakiye);
+		printf("Cekilecek tutari giriniz:\n");
+		scanf("%d",&tutar);
+		               
+		     if (tutar > bakiye){
+		        printf("bakiye yetersiz");
+		        break;
+		    }
+		bakiye -= tutar;
+		               printf("Yeni bakiye: %d",bakiye);
+		        break;
+		case 3:
+		printf("Yatirilacak tutari giriniz:\n");
+		scanf("%d",&tutar);
+		
+		bakiye += tutar;
+	                   printf ("Yeni bakiye: %d",bakiye);
+		        break;
+		case 4: 
+		printf("Bir sorundan oturu havale işleminizi gerçeklestiremiyoruz");
+		        break;
+		default:
+		printf("bilinmeyen islem");
+				
+	}
+	
+	
+	
+	
+	return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
